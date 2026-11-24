@@ -53,7 +53,6 @@ p { margin: 0 0 1.1em; }
   font-size: 13px; font-weight: 600; letter-spacing: .02em; color: var(--ossenbloed);
   margin-bottom: 22px; display: flex; align-items: center; gap: 10px;
 }
-.eyebrow::before { content: ''; width: 28px; height: 1px; background: currentColor; }
 .skip { position: absolute; left: -9999px; top: 12px; z-index: 300; background: var(--kalk); padding: 10px 14px; }
 .skip:focus { left: 12px; }
 .muted { opacity: .6; }
@@ -149,8 +148,7 @@ html.menu-open .mobile-menu nav a:nth-child(6) { transition-delay: .5s; }
 /* ---------- Hero ---------- */
 .hero { position: relative; height: 100vh; height: 100svh; min-height: 640px; color: var(--kalk); overflow: hidden; display: flex; flex-direction: column; justify-content: flex-end; }
 .hero-media { position: absolute; inset: 0; overflow: hidden; }
-.hero-media img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 62%; transform: scale(1.14); transition: transform 2.8s var(--ease); will-change: transform; }
-.is-ready .hero-media img { transform: scale(1.02); }
+.hero-media img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 62%; }
 .hero::after {
   content: ''; position: absolute; inset: 0; pointer-events: none;
   background:
@@ -159,7 +157,6 @@ html.menu-open .mobile-menu nav a:nth-child(6) { transition-delay: .5s; }
 }
 .hero-content { position: relative; z-index: 2; width: 100%; max-width: var(--max); margin: 0 auto; padding: 0 var(--gutter) 40px; }
 .hero-eyebrow { color: var(--hooi-lt); }
-.hero-eyebrow::before { display: none; }
 .dot { width: 4px; height: 4px; border-radius: 50%; background: currentColor; }
 .hero-title { font-size: clamp(76px, 14vw, 232px); line-height: .86; letter-spacing: -.035em; margin: 0 0 40px; }
 .line { display: block; overflow: hidden; padding-bottom: .06em; margin-bottom: -.06em; }
@@ -191,7 +188,7 @@ html.menu-open .mobile-menu nav a:nth-child(6) { transition-delay: .5s; }
 
 /* ---------- Parallax frame ---------- */
 .parallax-frame { overflow: hidden; position: relative; height: 100%; }
-.parallax-frame img { width: 100%; height: 116%; margin-top: -8%; object-fit: cover; will-change: transform; }
+.parallax-frame img { width: 100%; height: 100%; object-fit: cover; }
 
 /* ---------- Intro statement ---------- */
 .intro { padding: clamp(110px, 18vw, 240px) 0; }
@@ -208,7 +205,6 @@ html.menu-open .mobile-menu nav a:nth-child(6) { transition-delay: .5s; }
 .story-photo .parallax-frame { aspect-ratio: 4 / 5; height: auto; }
 .story-photo img { filter: contrast(1.05); }
 .story-photo figcaption { font-size: 13px; color: var(--ink-soft); margin-top: 14px; display: flex; gap: 10px; align-items: center; }
-.story-photo figcaption::before { content: ''; width: 18px; height: 1px; background: currentColor; }
 .story-text > p:not(.eyebrow) { color: var(--ink-soft); max-width: 540px; }
 .stats { display: grid; grid-template-columns: repeat(3, 1fr); margin: 48px 0 0; border-top: 1px solid var(--line); }
 .stats > div { padding: 22px 16px 0 0; }
@@ -217,23 +213,15 @@ html.menu-open .mobile-menu nav a:nth-child(6) { transition-delay: .5s; }
 .stats dd { margin: 0 0 4px; font-family: var(--serif); font-size: clamp(42px, 4.4vw, 64px); line-height: 1; color: var(--ossenbloed); }
 .stats > div { display: flex; flex-direction: column-reverse; }
 
-/* ---------- Marquee ---------- */
-.marquee { background: var(--ossenbloed); color: var(--kalk); overflow: hidden; padding: 26px 0; }
-.marquee-track { display: flex; align-items: center; gap: 44px; width: max-content; animation: marquee 38s linear infinite; }
-.marquee span { font-family: var(--serif); font-style: italic; font-size: clamp(36px, 4.6vw, 68px); line-height: 1; white-space: nowrap; }
-.marquee i { width: 14px; height: 14px; background: var(--hooi); transform: rotate(45deg); flex: none; }
-@keyframes marquee { to { transform: translateX(calc(-50% - 22px)); } }
-
 /* ---------- Kitchen ---------- */
-.kitchen { padding: clamp(110px, 14vw, 200px) 0; background: var(--kalk); }
+.kitchen { padding: clamp(110px, 14vw, 200px) 0; background: var(--kalk-2); }
 .kitchen-grid { display: grid; grid-template-columns: 5fr 6fr; gap: clamp(40px, 8vw, 140px); align-items: start; }
 .kitchen-head { position: sticky; top: 130px; }
 .kitchen-head > p:not(.eyebrow) { color: var(--ink-soft); max-width: 430px; }
 .kitchen-list { list-style: none; margin: 0; padding: 0; display: grid; gap: clamp(64px, 8vw, 120px); }
 .kitchen-img { overflow: hidden; aspect-ratio: 3 / 2; }
 .kitchen-item:nth-child(3) .kitchen-img { aspect-ratio: 4 / 3; }
-.kitchen-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 1.6s var(--ease); }
-.kitchen-item:hover .kitchen-img img { transform: scale(1.05); }
+.kitchen-img img { width: 100%; height: 100%; object-fit: cover; }
 .kitchen-copy { display: grid; grid-template-columns: 64px 1fr; column-gap: 12px; padding-top: 26px; }
 .kitchen-copy .num { grid-row: span 2; font-family: var(--serif); font-style: italic; font-size: 26px; color: var(--hooi); line-height: 1.2; }
 .kitchen-copy h3 { font-size: clamp(30px, 2.8vw, 40px); line-height: 1.1; margin-bottom: 10px; }
@@ -394,6 +382,5 @@ html.menu-open .mobile-menu nav a:nth-child(6) { transition-delay: .5s; }
 }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; transition-delay: 0s !important; }
-  .marquee-track { animation: none; }
   .statement .w { opacity: 1; }
 }
