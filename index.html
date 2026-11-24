@@ -3,202 +3,368 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Klassiek · Boerderijrestaurant</title>
-<meta name="description" content="Klassiek: boerderijrestaurant in een eeuwenoude Brabantse langgevelboerderij. Eten van het land, aan lange tafels onder eiken balken.">
+<title>Klassiek · Boerderijrestaurant in Brabant</title>
+<meta name="description" content="Klassiek is een boerderijrestaurant in een Brabantse langgevelboerderij uit 1847. Koken met wat het land geeft, brood uit de bakoven, eten aan lange tafels.">
+<meta name="theme-color" content="#23352A">
+<meta property="og:title" content="Klassiek · Boerderijrestaurant">
+<meta property="og:description" content="Aan tafel op de deel. Opening voorjaar 2027.">
+<meta property="og:image" content="img/hero-boerderij.jpg">
+<script>
+  document.documentElement.classList.add('js');
+  setTimeout(function () { document.documentElement.classList.add('is-ready'); }, 4000);
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Young+Serif&family=Instrument+Sans:wght@400;500;600&family=Caveat:wght@500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter+Tight:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="img/hero-boerderij.jpg" media="(min-width: 761px)">
+<link rel="preload" as="image" href="img/hero-boerderij-m.jpg" media="(max-width: 760px)">
 <link rel="stylesheet" href="styles.css">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='4' fill='%232F4536'/%3E%3Cpath d='M4 4L28 28H4z' fill='%23F3ECDD'/%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%2323352A'/%3E%3Cpath d='M10 30 32 12l22 18' fill='none' stroke='%23F2EBDD' stroke-width='3'/%3E%3Cpath d='M24 26v26M24 39l13-13M28 35l12 17' fill='none' stroke='%23F2EBDD' stroke-width='3.5'/%3E%3C/svg%3E">
 </head>
 <body>
 
-<div class="preview-bar">Ontwerppreview · nog niet definitief</div>
+<!-- Intro -->
+<div class="loader" aria-hidden="true">
+  <div class="loader-inner">
+    <svg class="emblem loader-emblem" viewBox="0 0 120 120"><use href="#emblem"/></svg>
+    <p class="loader-word"><span>Klassiek</span></p>
+  </div>
+</div>
 
-<header class="site-header" id="top">
-  <a href="#top" class="brand" aria-label="Klassiek, naar boven">
-    <svg class="brand-mark" viewBox="0 0 48 48" aria-hidden="true"><path d="M4 22 24 6l20 16" fill="none" stroke="currentColor" stroke-width="3"/><rect x="10" y="22" width="28" height="20" fill="none" stroke="currentColor" stroke-width="3"/><path d="M18 42V30h12v12" fill="none" stroke="currentColor" stroke-width="3"/><path d="M18 30l12 12M30 30 18 42" stroke="currentColor" stroke-width="1.5"/></svg>
-    <span class="brand-name">Klassiek</span>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="emblem" viewBox="0 0 120 120">
+    <circle cx="60" cy="60" r="56" fill="none" stroke="currentColor" stroke-width="3"/>
+    <circle cx="60" cy="60" r="48" fill="none" stroke="currentColor" stroke-width="1.4"/>
+    <path d="M27 58 60 31l33 27" fill="none" stroke="currentColor" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+    <path d="M50 50v38M50 70l19-19M56 64l15 24" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="square"/>
+    <path d="M36 92h48" stroke="currentColor" stroke-width="2"/>
+  </symbol>
+</svg>
+
+<div class="grain" aria-hidden="true"></div>
+
+<a class="skip" href="#main">Naar de inhoud</a>
+
+<!-- Header -->
+<header class="header" data-header>
+  <nav class="header-nav left" aria-label="Hoofdmenu">
+    <a href="#verhaal">Verhaal</a>
+    <a href="#keuken">Keuken</a>
+    <a href="#kaart">Kaart</a>
+  </nav>
+  <a href="#top" class="logo" aria-label="Klassiek, terug naar boven">
+    <svg class="emblem" viewBox="0 0 120 120" aria-hidden="true"><use href="#emblem"/></svg>
+    <span class="logo-text">Klassiek</span>
   </a>
-  <nav class="nav" aria-label="Hoofdmenu">
+  <nav class="header-nav right" aria-label="Meer">
+    <a href="#sfeer">Sfeer</a>
+    <a href="#groepen">Groepen</a>
+    <a href="#reserveren" class="pill">Reserveer</a>
+  </nav>
+  <button class="menu-btn" type="button" aria-label="Menu openen" aria-expanded="false" aria-controls="mobile-menu">
+    <span></span><span></span>
+  </button>
+</header>
+
+<div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+  <nav aria-label="Mobiel menu">
     <a href="#verhaal">Verhaal</a>
     <a href="#keuken">Keuken</a>
     <a href="#kaart">Kaart</a>
     <a href="#sfeer">Sfeer</a>
-    <a href="#bezoek">Bezoek</a>
+    <a href="#groepen">Groepen</a>
+    <a href="#reserveren">Reserveren</a>
   </nav>
-  <a href="#reserveren" class="btn btn-small">Reserveer</a>
-  <button class="burger" aria-label="Menu openen" aria-expanded="false"><span></span><span></span></button>
-</header>
+  <p class="mobile-menu-foot">Boerderijrestaurant · Opening voorjaar 2027</p>
+</div>
 
-<section class="hero">
-  <img src="img/hero-boerderij.jpg" alt="Brabantse langgevelboerderij met zwarte luiken onder hoge bomen" class="hero-img">
-  <div class="hero-inner">
-    <p class="kicker">Boerderijrestaurant · opening voorjaar 2027</p>
-    <h1>Aan tafel<br>op de deel.</h1>
-    <p class="lead">Waar vroeger de oogst werd gedorst, schuif je straks aan bij lange tafels onder eikenhouten balken. Eten van het land, zonder poespas.</p>
-    <div class="hero-actions">
-      <a href="#reserveren" class="btn">Zet je op de lijst</a>
-      <a href="#verhaal" class="link-arrow">Lees het verhaal</a>
+<main id="main">
+
+<!-- Hero -->
+<section class="hero" id="top">
+  <div class="hero-media">
+    <picture>
+      <source media="(max-width: 760px)" srcset="img/hero-boerderij-m.jpg">
+      <img src="img/hero-boerderij.jpg" alt="Brabantse langgevelboerderij met zwarte luiken onder hoge bomen" fetchpriority="high">
+    </picture>
+  </div>
+  <div class="hero-content">
+    <p class="eyebrow hero-eyebrow"><span>Boerderijrestaurant</span><span class="dot"></span><span>Sinds 1847 een boerderij</span></p>
+    <h1 class="hero-title">
+      <span class="line"><span>Aan tafel</span></span>
+      <span class="line"><span>op de <em>deel</em></span></span>
+    </h1>
+    <div class="hero-bottom">
+      <p class="hero-lead">Waar ooit het graan werd gedorst, schuif je straks aan bij lange tafels onder eikenhouten balken. Koken met wat het land geeft.</p>
+      <a href="#reserveren" class="btn btn-light"><span>Zet je op de lijst</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
     </div>
   </div>
-  <div class="hero-stamp" aria-hidden="true">
-    <span>Anno</span><strong>1847</strong><span>Brabant</span>
+  <div class="hero-meta">
+    <div><span>Opening</span><strong>Voorjaar 2027</strong></div>
+    <div><span>Locatie</span><strong>Het Brabantse land</strong></div>
+    <div><span>Geopend</span><strong>Woensdag t/m zondag</strong></div>
+    <a href="#intro" class="scroll-cue" aria-label="Scroll naar beneden"><span></span></a>
   </div>
 </section>
 
-<div class="shutter-strip" aria-hidden="true"></div>
+<!-- Statement -->
+<section class="intro" id="intro">
+  <div class="container">
+    <p class="eyebrow">Welkom op het erf</p>
+    <p class="statement" data-words>Klassiek is een boerderijrestaurant in een langgevel uit 1847. We koken met wat het land geeft, bakken ons brood in de oude oven en zetten alles op lange tafels. Geen poespas. Wel smaak.</p>
+  </div>
+</section>
 
-<section class="verhaal section" id="verhaal">
-  <div class="wrap two-col">
-    <figure class="photo-frame">
-      <img src="img/historie.jpg" alt="Historische zwart-witfoto van de langgevelboerderij in de sneeuw, met de was aan de lijn" loading="lazy">
-      <figcaption>De boerderij in de winter, ergens in de jaren zestig.</figcaption>
+<!-- Verhaal -->
+<section class="story" id="verhaal">
+  <div class="container story-grid">
+    <figure class="story-photo reveal">
+      <div class="parallax-frame"><img src="img/historie.jpg" alt="Historische zwart-witfoto van de langgevelboerderij in de sneeuw, met de was aan de lijn" loading="lazy" data-parallax="0.08"></div>
+      <figcaption>De boerderij in de winter, jaren zestig</figcaption>
     </figure>
-    <div class="text">
-      <p class="kicker">Ons verhaal</p>
-      <h2>Een boerderij die nooit stil heeft gestaan</h2>
-      <p>Bijna twee eeuwen lang woonden mens en dier hier onder één dak: aan de ene kant het woonhuis, aan de andere kant de stal en de deel. In die langgevel werd gekookt, gedorst, geboren en gefeest.</p>
-      <p>Wij hebben de muren laten staan zoals ze zijn. De gebinten zijn nog van de eerste boer, de luiken in de oude kleuren, de vloer van gebakken klinkers. Alleen de keuken is nieuw: daar gebeurt het nu.</p>
-      <p class="handwritten">Kom binnen, laarzen mogen aan.</p>
+    <div class="story-text">
+      <p class="eyebrow reveal">01 · Het verhaal</p>
+      <h2 class="reveal">Een boerderij die nooit heeft <em>stilgestaan</em></h2>
+      <p class="reveal">Bijna twee eeuwen woonden mens en dier hier onder één dak. Aan de ene kant het woonhuis, aan de andere kant de stal en de deel. In die langgevel werd gekookt, gedorst, geboren en gefeest.</p>
+      <p class="reveal">We hebben de muren gelaten zoals ze zijn. De gebinten zijn nog van de eerste boer, de luiken weer in de oude kleuren, de vloer van gebakken klinkers. Alleen de keuken is nieuw. Daar gebeurt het nu.</p>
+      <dl class="stats reveal">
+        <div><dt>Gebouwd</dt><dd data-count="1847">1847</dd></div>
+        <div><dt>Gasten aan één tafel</dt><dd data-count="80">80</dd></div>
+        <div><dt>Km tot onze boeren</dt><dd>&lt;<span data-count="10">10</span></dd></div>
+      </dl>
     </div>
   </div>
 </section>
 
-<section class="keuken section" id="keuken">
-  <div class="wrap">
-    <div class="section-head">
-      <p class="kicker">De keuken</p>
-      <h2>Wat het land geeft, komt op tafel</h2>
+<!-- Marquee -->
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track">
+    <span>Van het erf</span><i></i><span>Uit de bakoven</span><i></i><span>Aan lange tafels</span><i></i><span>Met de seizoenen</span><i></i>
+    <span>Van het erf</span><i></i><span>Uit de bakoven</span><i></i><span>Aan lange tafels</span><i></i><span>Met de seizoenen</span><i></i>
+  </div>
+</div>
+
+<!-- Keuken -->
+<section class="kitchen" id="keuken">
+  <div class="container kitchen-grid">
+    <div class="kitchen-head">
+      <p class="eyebrow reveal">02 · De keuken</p>
+      <h2 class="reveal">Wat het land geeft, komt op <em>tafel</em></h2>
+      <p class="reveal">Geen ingewikkelde borden, wel eerlijk eten met karakter. We werken met een handvol boeren uit de buurt en met wat er in onze eigen moestuin groeit.</p>
     </div>
-    <div class="pillars">
-      <article class="pillar">
-        <span class="pillar-num">01</span>
-        <h3>Van het erf</h3>
-        <p>Groente uit onze eigen moestuin achter de schuur, eieren van de kippen op het erf. Wat we niet zelf telen halen we binnen tien kilometer.</p>
-      </article>
-      <article class="pillar">
-        <span class="pillar-num">02</span>
-        <h3>Uit de houtoven</h3>
-        <p>Elke ochtend bakken we zuurdesembrood in de oude bakoven. Het vlees garen we langzaam boven het vuur, zoals dat altijd ging.</p>
-      </article>
-      <article class="pillar">
-        <span class="pillar-num">03</span>
-        <h3>Aan lange tafels</h3>
-        <p>We schenken uit grote schalen. Je deelt, je proeft, je raakt aan de praat met de buren aan tafel. Zo eet je op een boerderij.</p>
-      </article>
-    </div>
-    <div class="food-row">
-      <img src="img/seizoensgroente.jpg" alt="Schaal met seizoensgroente, rode kool en gegratineerde aardappel op een houten tafel" loading="lazy">
-      <img src="img/brood.jpg" alt="Aangesneden boerenbrood op een snijplank" loading="lazy">
-    </div>
+    <ol class="kitchen-list">
+      <li class="kitchen-item reveal">
+        <div class="kitchen-img"><img src="img/seizoensgroente.jpg" alt="Schaal met seizoensgroente, rode kool en gegratineerde aardappel op een houten tafel" loading="lazy"></div>
+        <div class="kitchen-copy">
+          <span class="num">I</span>
+          <h3>Van het erf</h3>
+          <p>Groente uit de moestuin achter de schuur, eieren van de kippen op het erf. Wat we niet zelf telen, halen we binnen tien kilometer.</p>
+        </div>
+      </li>
+      <li class="kitchen-item reveal">
+        <div class="kitchen-img"><img src="img/brood.jpg" alt="Aangesneden boerenbrood met een knapperige korst op een snijplank" loading="lazy"></div>
+        <div class="kitchen-copy">
+          <span class="num">II</span>
+          <h3>Uit de bakoven</h3>
+          <p>Elke ochtend gaat er zuurdesembrood de oude bakoven in. Vlees en groente garen langzaam boven het vuur, zoals het altijd ging.</p>
+        </div>
+      </li>
+      <li class="kitchen-item reveal">
+        <div class="kitchen-img"><img src="img/tafel.jpg" alt="Lange houten tafel met verschillende stoelen in een houten schuur" loading="lazy"></div>
+        <div class="kitchen-copy">
+          <span class="num">III</span>
+          <h3>Aan lange tafels</h3>
+          <p>We serveren in grote schalen om te delen. Je proeft, je schuift door, je raakt aan de praat met de buren aan tafel.</p>
+        </div>
+      </li>
+    </ol>
   </div>
 </section>
 
-<section class="kaart section" id="kaart">
-  <div class="wrap two-col reverse">
-    <div class="menu-card">
-      <div class="menu-head">
-        <p class="kicker">Voorproefje · winterkaart</p>
-        <h2>Boerenmenu</h2>
-        <p class="menu-sub">Vier gangen om te delen · € 49 p.p.</p>
+<!-- Kaart -->
+<section class="menu" id="kaart">
+  <div class="container">
+    <div class="menu-top">
+      <div>
+        <p class="eyebrow reveal">03 · De kaart</p>
+        <h2 class="reveal">Vier seizoenen, <em>vier kaarten</em></h2>
       </div>
-      <ul class="menu-list">
-        <li><span class="dish">Zuurdesem uit de bakoven</span><span class="dots"></span><span class="note">gezouten roomboter, reuzel met appel</span></li>
-        <li><span class="dish">Pompoensoep</span><span class="dots"></span><span class="note">geroosterde pitten, karnemelk</span></li>
-        <li><span class="dish">Hachee van het Brabants rund</span><span class="dots"></span><span class="note">rode kool, stoofpeer, puree van het land</span></li>
-        <li><span class="dish">Wentelteefjes</span><span class="dots"></span><span class="note">vanille-ijs van de boerderij, kaneel</span></li>
-      </ul>
-      <p class="menu-foot">De kaart wisselt met de seizoenen. Vegetarisch? Laat het ons weten.</p>
-    </div>
-    <div class="seasons">
-      <p class="kicker">Het jaar rond</p>
-      <h2>Vier seizoenen, vier kaarten</h2>
-      <ol class="season-list">
-        <li><strong>Lente</strong><span>Asperges uit de Brabantse grond, eerste kruiden, lam</span></li>
-        <li><strong>Zomer</strong><span>Tomaten, bonen en bessen; eten in de boomgaard</span></li>
-        <li><strong>Herfst</strong><span>Pompoen, paddenstoelen, wild en appels van het erf</span></li>
-        <li><strong>Winter</strong><span>Stoofpotten, kool, knolgewassen en het vuur aan</span></li>
-      </ol>
-    </div>
-  </div>
-</section>
-
-<section class="sfeer" id="sfeer">
-  <div class="wrap">
-    <div class="section-head light">
-      <p class="kicker">Sfeer</p>
-      <h2>Balken, hooi en kaarslicht</h2>
-    </div>
-  </div>
-  <div class="gallery">
-    <figure class="g-big"><img src="img/hooizolder.jpg" alt="Hooizolder onder een rieten kap, licht valt door de planken" loading="lazy"><figcaption>De hooizolder, straks onze bovenzaal</figcaption></figure>
-    <figure><img src="img/gebint.jpg" alt="Eikenhouten gebint en gekalkte muren in de oude stal" loading="lazy"><figcaption>Het oorspronkelijke gebint</figcaption></figure>
-    <figure><img src="img/tafel.jpg" alt="Lange houten tafel met verschillende stoelen in een houten schuur" loading="lazy"><figcaption>Lange tafels, ongelijke stoelen</figcaption></figure>
-  </div>
-</section>
-
-<section class="groepen section">
-  <div class="wrap groepen-inner">
-    <div>
-      <p class="kicker">Groepen &amp; feesten</p>
-      <h2>De hele deel voor jezelf</h2>
-      <p>Bruiloft, familiedag of bedrijfsdiner: tot 80 gasten aan één lange tafel. We stellen samen een boerenbuffet of shared dining menu samen.</p>
-    </div>
-    <a href="#reserveren" class="btn btn-ghost">Vraag een voorstel aan</a>
-  </div>
-</section>
-
-<section class="reserveren section" id="reserveren">
-  <div class="wrap two-col">
-    <div class="text">
-      <p class="kicker">Reserveren</p>
-      <h2>Zet je naam op de lijst</h2>
-      <p>We gaan in het voorjaar van 2027 open. Laat je gegevens achter en je hoort als eerste wanneer de deuren opengaan. De eerste tafels zijn voor jou.</p>
-      <ul class="facts">
-        <li><span>Wo t/m zo</span> lunch &amp; diner</li>
-        <li><span>Ma &amp; di</span> gesloten, dan werken we op het land</li>
-      </ul>
-    </div>
-    <form class="form" onsubmit="event.preventDefault(); this.classList.add('sent');">
-      <label>Naam<input type="text" name="naam" autocomplete="name" required></label>
-      <label>E-mail<input type="email" name="email" autocomplete="email" required></label>
-      <div class="form-row">
-        <label>Aantal personen
-          <select name="personen"><option>2</option><option>3</option><option>4</option><option>5–8</option><option>Groep (9+)</option></select>
-        </label>
-        <label>Voorkeur
-          <select name="moment"><option>Lunch</option><option>Diner</option><option>Maakt niet uit</option></select>
-        </label>
+      <div class="tabs reveal" role="tablist" aria-label="Kies een seizoen">
+        <button role="tab" id="tab-lente" aria-controls="panel-lente" aria-selected="false" tabindex="-1">Lente</button>
+        <button role="tab" id="tab-zomer" aria-controls="panel-zomer" aria-selected="false" tabindex="-1">Zomer</button>
+        <button role="tab" id="tab-herfst" aria-controls="panel-herfst" aria-selected="false" tabindex="-1">Herfst</button>
+        <button role="tab" id="tab-winter" aria-controls="panel-winter" aria-selected="true">Winter</button>
       </div>
-      <button class="btn" type="submit">Zet me op de lijst</button>
-      <p class="form-thanks">Bedankt! Je staat op de lijst. <small>(preview: er is niets verstuurd)</small></p>
+    </div>
+
+    <div class="menu-card reveal">
+      <div class="menu-side">
+        <svg class="emblem" viewBox="0 0 120 120" aria-hidden="true"><use href="#emblem"/></svg>
+        <p class="menu-title">Boerenmenu</p>
+        <p class="menu-price">Vier gangen om te delen<br><strong>€ 52</strong> per persoon</p>
+        <p class="menu-note">Vegetarisch op aanvraag.<br>Kinderen tot 12 jaar half geld.</p>
+      </div>
+
+      <div class="menu-panels">
+        <div class="panel" role="tabpanel" id="panel-lente" aria-labelledby="tab-lente" hidden>
+          <ul class="courses">
+            <li><span class="c-num">01</span><div><h4>Zuurdesem uit de bakoven</h4><p>Gezouten roomboter, daslook</p></div></li>
+            <li><span class="c-num">02</span><div><h4>Witte asperges</h4><p>Ei van het erf, beurre noisette, jonge peterselie</p></div></li>
+            <li><span class="c-num">03</span><div><h4>Lamsschouder uit de oven</h4><p>Voorjaarsui, nieuwe aardappel, tuinkruiden</p></div></li>
+            <li><span class="c-num">04</span><div><h4>Rabarber</h4><p>Karnemelkpudding, havercrumble</p></div></li>
+          </ul>
+        </div>
+        <div class="panel" role="tabpanel" id="panel-zomer" aria-labelledby="tab-zomer" hidden>
+          <ul class="courses">
+            <li><span class="c-num">01</span><div><h4>Brood en tomaat</h4><p>Tomaten uit de kas, olijfolie, zeezout</p></div></li>
+            <li><span class="c-num">02</span><div><h4>Koude komkommersoep</h4><p>Dille, hangop, geroosterde zaden</p></div></li>
+            <li><span class="c-num">03</span><div><h4>Kip van het erf</h4><p>Boontjes, krieltjes, kruidenboter</p></div></li>
+            <li><span class="c-num">04</span><div><h4>Aardbeien</h4><p>Hangop, vlierbloesem, zandkoek</p></div></li>
+          </ul>
+        </div>
+        <div class="panel" role="tabpanel" id="panel-herfst" aria-labelledby="tab-herfst" hidden>
+          <ul class="courses">
+            <li><span class="c-num">01</span><div><h4>Brood en boter</h4><p>Paddenstoelenboter, grof zout</p></div></li>
+            <li><span class="c-num">02</span><div><h4>Pompoensoep</h4><p>Geroosterde pitten, karnemelk, salie</p></div></li>
+            <li><span class="c-num">03</span><div><h4>Stoof van wild zwijn</h4><p>Rode kool, stoofpeer, aardappelpuree</p></div></li>
+            <li><span class="c-num">04</span><div><h4>Appeltaart uit de bakoven</h4><p>Appels van het erf, slagroom</p></div></li>
+          </ul>
+        </div>
+        <div class="panel" role="tabpanel" id="panel-winter" aria-labelledby="tab-winter">
+          <ul class="courses">
+            <li><span class="c-num">01</span><div><h4>Zuurdesem uit de bakoven</h4><p>Gezouten roomboter, reuzel met appel</p></div></li>
+            <li><span class="c-num">02</span><div><h4>Erwtensoep</h4><p>Rookworst van de slager, roggebrood, spek</p></div></li>
+            <li><span class="c-num">03</span><div><h4>Hachee van Brabants rund</h4><p>Rode kool, stoofpeer, puree van het land</p></div></li>
+            <li><span class="c-num">04</span><div><h4>Wentelteefjes</h4><p>Vanille-ijs van de boerderij, kaneel</p></div></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Sfeer -->
+<section class="mood" id="sfeer">
+  <div class="container">
+    <div class="mood-head">
+      <p class="eyebrow reveal">04 · Sfeer</p>
+      <h2 class="reveal">Balken, hooi <em>en kaarslicht</em></h2>
+    </div>
+  </div>
+  <div class="mood-grid">
+    <figure class="mood-big reveal">
+      <div class="parallax-frame"><img src="img/hooizolder.jpg" alt="Hooizolder onder een rieten kap, licht valt tussen de planken door" loading="lazy" data-parallax="0.1"></div>
+      <figcaption><span>De hooizolder</span>Straks onze bovenzaal voor 40 gasten</figcaption>
+    </figure>
+    <figure class="mood-small reveal">
+      <div class="parallax-frame"><img src="img/gebint.jpg" alt="Eikenhouten gebint en gekalkte muren in de oude stal" loading="lazy" data-parallax="0.06"></div>
+      <figcaption><span>Het gebint</span>Eikenhout van de eerste boer</figcaption>
+    </figure>
+    <blockquote class="mood-quote reveal">
+      <p>“Hier eet je zoals het op het land <em>hoort</em>: samen, met de seizoenen, en zonder haast.”</p>
+    </blockquote>
+  </div>
+</section>
+
+<!-- Groepen -->
+<section class="groups" id="groepen">
+  <div class="container groups-grid">
+    <div class="groups-img reveal">
+      <div class="parallax-frame"><img src="img/rieten-boerderij.jpg" alt="Witte boerderij met rieten dak en zwarte luiken" loading="lazy" data-parallax="0.06"></div>
+    </div>
+    <div class="groups-text">
+      <p class="eyebrow reveal">05 · Groepen &amp; feesten</p>
+      <h2 class="reveal">De hele deel <em>voor jezelf</em></h2>
+      <p class="reveal">Van een bruiloft in de boomgaard tot een bedrijfsdiner op de hooizolder. We stellen samen een menu samen dat past bij het moment.</p>
+      <ul class="group-list reveal">
+        <li><span>Bruiloften</span><span>tot 120 gasten</span></li>
+        <li><span>Familiedagen</span><span>tot 80 gasten</span></li>
+        <li><span>Bedrijfsdiners</span><span>tot 60 gasten</span></li>
+        <li><span>Hooizolder privé</span><span>tot 40 gasten</span></li>
+      </ul>
+      <a href="#reserveren" class="btn btn-dark reveal" data-group-link><span>Vraag een voorstel aan</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    </div>
+  </div>
+</section>
+
+<!-- Reserveren -->
+<section class="reserve" id="reserveren">
+  <div class="container reserve-grid">
+    <div class="reserve-text">
+      <p class="eyebrow reveal">06 · Reserveren</p>
+      <h2 class="reveal">De eerste tafels <em>zijn voor jou</em></h2>
+      <p class="reveal">We openen in het voorjaar van 2027. Zet je op de lijst en je hoort als eerste wanneer de deuren van de deel opengaan.</p>
+      <div class="hours reveal">
+        <div><span>Woensdag t/m zondag</span><span>12:00 – 22:00</span></div>
+        <div><span>Maandag &amp; dinsdag</span><span>Gesloten</span></div>
+      </div>
+    </div>
+    <form class="form reveal" novalidate>
+      <div class="form-body">
+        <div class="field">
+          <input type="text" id="f-naam" name="naam" autocomplete="name" placeholder=" " required>
+          <label for="f-naam">Naam</label>
+        </div>
+        <div class="field">
+          <input type="email" id="f-email" name="email" autocomplete="email" placeholder=" " required>
+          <label for="f-email">E-mailadres</label>
+        </div>
+        <div class="field-row">
+          <div class="field">
+            <select id="f-pers" name="personen">
+              <option>2 personen</option><option>3 personen</option><option>4 personen</option><option>5 tot 8 personen</option><option>Groep (9+)</option>
+            </select>
+            <label for="f-pers" class="static">Gezelschap</label>
+          </div>
+          <div class="field">
+            <select id="f-moment" name="moment">
+              <option>Diner</option><option>Lunch</option><option>Maakt niet uit</option>
+            </select>
+            <label for="f-moment" class="static">Voorkeur</label>
+          </div>
+        </div>
+        <label class="check"><input type="checkbox" name="nieuws" checked> <span>Houd me op de hoogte van de opening</span></label>
+        <p class="form-error" role="alert" hidden>Vul je naam en een geldig e-mailadres in.</p>
+        <button type="submit" class="btn btn-dark btn-full"><span>Zet me op de lijst</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+      </div>
+      <div class="form-done" hidden>
+        <svg class="emblem" viewBox="0 0 120 120" aria-hidden="true"><use href="#emblem"/></svg>
+        <p class="form-done-title">Je staat op de lijst</p>
+        <p>Zodra we de deuren openen, hoor je het als eerste. <span class="muted">(Ontwerppreview: er is niets verstuurd.)</span></p>
+      </div>
     </form>
   </div>
 </section>
 
-<footer class="site-footer" id="bezoek">
-  <div class="shutter-strip" aria-hidden="true"></div>
-  <div class="wrap footer-grid">
-    <div>
-      <p class="footer-brand">Klassiek</p>
-      <p>Boerderijrestaurant<br>in het Brabantse land</p>
+</main>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="shutters" aria-hidden="true"></div>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <h3>Bezoek</h3>
+        <p>Adres volgt bij opening<br>Parkeren op het erf<br>Fietsenstalling in de schuur</p>
+      </div>
+      <div class="footer-col">
+        <h3>Openingstijden</h3>
+        <p>Woensdag t/m zondag<br>12:00 – 22:00<br>Maandag &amp; dinsdag gesloten</p>
+      </div>
+      <div class="footer-col">
+        <h3>Contact</h3>
+        <p><a href="mailto:hallo@klassiek.nl">hallo@klassiek.nl</a><br><a href="#">Instagram</a> · <a href="#">Facebook</a></p>
+      </div>
+      <div class="footer-col">
+        <h3>Nieuws</h3>
+        <p>Volg de verbouwing van de boerderij op Instagram.</p>
+      </div>
     </div>
-    <div>
-      <h3>Bezoek</h3>
-      <p>Adres volgt<br>Gratis parkeren op het erf<br>Fietsenstalling in de schuur</p>
+    <p class="footer-word" aria-hidden="true">Klassiek</p>
+    <div class="footer-bottom">
+      <p>© 2026 Klassiek Boerderijrestaurant · Ontwerppreview</p>
+      <p class="credits">Beelden: Wikimedia Commons, o.a. Rijksdienst voor het Cultureel Erfgoed (CC BY-SA 4.0), T.T Boerderij Liempde (CC BY-SA 3.0 NL), Bunnik Achterdijk 1 (CC BY-SA 4.0), Pain de Campagne (CC BY 2.0), Sunday roast vegetables (CC BY-SA 4.0), Rustic dining space (CC BY 2.0).</p>
     </div>
-    <div>
-      <h3>Openingstijden</h3>
-      <p>Woensdag t/m zondag<br>12:00 – 22:00<br>Ma &amp; di gesloten</p>
-    </div>
-    <div>
-      <h3>Contact</h3>
-      <p>hallo@klassiek.nl<br>Instagram · Facebook</p>
-    </div>
-  </div>
-  <div class="wrap credits">
-    <p>Ontwerppreview. Naam, teksten en prijzen zijn voorbeelden. Sfeerbeelden via Wikimedia Commons: Rijksdienst voor het Cultureel Erfgoed (CC BY-SA 4.0), <em>T.T Boerderij Liempde</em> (CC BY-SA 3.0 NL), <em>Pain de Campagne</em> (CC BY 2.0), <em>Sunday roast vegetable side dish</em> (CC BY-SA 4.0), <em>Rustic dining space</em> (CC BY 2.0).</p>
   </div>
 </footer>
 
